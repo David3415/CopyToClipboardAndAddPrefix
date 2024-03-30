@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.26.3 FATAL_ERROR)
+
+project(CopyToClipboardAndAddPrefix)
+
+add_executable(CopyToClipboardAndAddPrefix CopyToClipboardAndAddPrefix/main.cpp
+CopyToClipboardAndAddPrefix/CopyFromClipboardClass.cpp
+CopyToClipboardAndAddPrefix/PostfixAndPrefixClass.cpp
+CopyToClipboardAndAddPrefix/Utf8ToUtf16_Class.cpp
+CopyToClipboardAndAddPrefix/WriteClipboardClass.cpp
+
+CopyToClipboardAndAddPrefix/CopyFromClipboardClass.h
+CopyToClipboardAndAddPrefix/PostfixAndPrefixClass.h
+CopyToClipboardAndAddPrefix/Utf8ToUtf16_Class.h
+CopyToClipboardAndAddPrefix/WriteClipboardClass.h
+)
+
