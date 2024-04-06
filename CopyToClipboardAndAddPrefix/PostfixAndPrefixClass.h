@@ -8,10 +8,11 @@ private:
 	{
 		char* prefix;
 		char* postfix;
-
+		bool numerating;
 		PrePostFix() {
 			prefix = NULL;
 			postfix = NULL;
+			numerating=NULL;
 		}
 	};
 public:
