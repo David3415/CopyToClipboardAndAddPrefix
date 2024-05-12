@@ -128,13 +128,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CopyFromClipboardClass.cpp" />
+    <ClCompile Include="InputTextClass.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PostfixAndPrefixClass.cpp" />
+    <ClCompile Include="StrConcatVoid.cpp" />
     <ClCompile Include="Utf8ToUtf16_Class.cpp" />
     <ClCompile Include="WriteClipboardClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CopyFromClipboardClass.h" />
+    <ClInclude Include="InputTextClass.h" />
     <ClInclude Include="PostfixAndPrefixClass.h" />
     <ClInclude Include="Utf8ToUtf16_Class.h" />
     <ClInclude Include="WriteClipboardClass.h" />

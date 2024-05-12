@@ -1,83 +1,58 @@
 ﻿#include <iostream>
 
 #include "PostfixAndPrefixClass.h"
-
+#include "InputTextClass.h"
 
 PostfixAndPrefixClass::PrePostFix* PostfixAndPrefixClass::prePostFixVoid() {
-
-	PostfixAndPrefixClass::PrePostFix* prePostFix = new PrePostFix{};
-
-	std::string str{};
-	//std::string str2{};
-
-	char* prefix = new char[20] {};
-	char* postfix = new char[20] {};
-
-	std::cout << "Enter Prefix: ";
-	std::cin >> str;
-
-	size_t str1_size = str.size();
-	char* cstr1 = new char[str1_size + 1];
-	strcpy_s(cstr1, str1_size + 1, str.c_str());
-
-	std::cout << "Enter Postfix: ";
-	std::cin >> str;
-
-	size_t str2_size = str.size();
-	char* cstr2 = new char[str2_size + 1];
-	strcpy_s(cstr2, str2_size + 1, str.c_str());
-
-	/*if (str1.empty()) {
-		std::cout << "String is empty" << std::endl;
-	}*/
-
-
+	InputTextClass InputTextClass;
+	bool numbering = true;
 	int  index = 0;
-	bool numerating = true;
 	bool exitBool = false;
+	std::string str{};
+
+		PrePostFix* prePostFix = new PrePostFix;
+	
+	///----------------------------------------------------------------------------------------- <summary>
+	///					Здесь вызов функций заполнения двух строк структуры prePostFix - prefix и postfix
+	///									InputTextVoid()			
+	
+	prePostFix->prefix = InputTextClass.InputTextVoid(CaptionsVec[0]);
+	prePostFix->postfix = InputTextClass.InputTextVoid(CaptionsVec[1]);
+///----------------------------------------------------------------------------------------- <returns></returns>
+	
 
 
-	std::cout << "Need line numbering?: y/n: ";
-	std::cin >> str;
-
-
-
-	while (exitBool==false)
+	///--------------------------------------------------------------------------------------------------- <summary>
+	///					Здесь вызов функций, спрашивающей у пользователя, надо ли 
+	///					нуменовать строки:: 	prePostFix->numbering				
+	///											y - надо, n - нет
+	/// 
+	///--------------------------------------------------------------------------------------------------------
+	
+	
+	while (exitBool == false)
 	{
-		while (str[index] == ' ') {
-			index++;
-		}
-
-		if (str[index] == 'y') {
-			prePostFix->numerating = true;
+		if (InputTextClass.InputTextVoid(CaptionsVec[2])[0] == 'y') {
+			prePostFix->numbering = true;
 			exitBool = true;
-			continue;
+			return prePostFix;
 		}
-		else if (str[0] == 'n')
+		else if (InputTextClass.InputTextVoid(CaptionsVec[2])[0] == 'n')
 		{
-			prePostFix->numerating = false;
+			prePostFix->numbering = false;
 			exitBool = true;
-			continue;
+			return prePostFix;
 		}
 		else {
 			system("cls");
-			std::cout << "Need line numbering ? : y / n: ";
-			std::cin >> str;
+			std::cout << "Need line numbering ? : y / n: "; 
+			std::cout << '\n';
 		}
-		if (exitBool) {
-			continue;
-		}
-	}
-
-	prePostFix->prefix = cstr1;
-	prePostFix->postfix = cstr2;
-
-
-	return prePostFix;
-};
+	};
+}
 
 PostfixAndPrefixClass::~PostfixAndPrefixClass() {
-
-	std::cout << "fin;";
+	std::cout << " ";
 };
+
 

@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 
 
 class PostfixAndPrefixClass
@@ -8,13 +9,24 @@ private:
 	{
 		char* prefix;
 		char* postfix;
-		bool numerating;
+		bool numbering;
 		PrePostFix() {
 			prefix = NULL;
 			postfix = NULL;
-			numerating=NULL;
+			numbering = NULL;
 		}
 	};
+
+	std::vector <std::string> CaptionsVec =
+	{
+		{
+		{"Enter Prefix : "},
+		{"Enter Postfix: "},
+		{ "Need line numbering?: y/n: "},
+		{"Notice, string is empty" }
+		}
+	};
+
 public:
 	PrePostFix* prePostFix;
 	PostfixAndPrefixClass()
